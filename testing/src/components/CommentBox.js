@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class CommentBox extends Component {
+import * as actions from "actions";
+
+class CommentBox extends Component {
   state = { comment: "" };
 
   handleChange = (e) => {
@@ -33,3 +36,5 @@ export default class CommentBox extends Component {
     );
   }
 }
+
+export default connect(null, actions)(CommentBox);
