@@ -10,7 +10,7 @@
 
 <div align = "center">
 
-  ![](testing/assets/course-info.png)
+  ![](course-info.png)
 </div>
 
 
@@ -36,7 +36,7 @@ And much More
 
 ##
 ```
-Authors:  {jakob yaro }
+Author:  { Stephen Grider }
 ```
 
 
