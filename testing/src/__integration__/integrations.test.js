@@ -27,11 +27,11 @@ describe("IT Fetch Test", () => {
     wrapped.find(".fetch-comments").simulate("click");
 
     // micro pause
-    setTimeout(() => {
+    moxios.wait(() => {
       wrapped.update();
       expect(wrapped.find("li").length).toEqual(3);
       done();
       wrapped.unmount();
-    }, 100);
+    });
   });
 });
