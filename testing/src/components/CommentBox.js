@@ -13,7 +13,7 @@ class CommentBox extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // TODO -call an action-creator
+    this.props.saveComment(this.state.comment);
     this.setState({ comment: "" });
   };
 
@@ -32,6 +32,9 @@ class CommentBox extends Component {
             <button>Submit Comment </button>
           </div>
         </form>
+        <button className="fetch-comments" onClick={this.props.fetchComments}>
+          Fetch Comments
+        </button>
       </div>
     );
   }
