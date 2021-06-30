@@ -3,19 +3,26 @@ import { mount } from "enzyme/build";
 import Root from "Root";
 import CommentList from "components/CommentList";
 
-let wrapped;
-beforeEach(() => {
-  const initialState = {
-    comments: ["Comment1", "Comment2"],
-  };
+describe("CommentList", () => {
+  let wrapped;
+  beforeEach(() => {
+    const initialState = {
+      comments: ["Comment1", "Comment2"],
+    };
 
-  wrapped = mount(
-    <Root initialState={initialState}>
-      <CommentList />
-    </Root>
-  );
-});
+    wrapped = mount(
+      <Root initialState={initialState}>
+        <CommentList />
+      </Root>
+    );
+  });
 
-it(" creats one li per comment", () => {
-  console.log(wrapped.find("li").length);
+  it(" creates one li per comment", () => {
+    expect(wrapped.find("li").length).toEqual(2);
+  });
+
+  it("shows the text for each comment", () => {
+    expect(wrapped.render().text()).toContain("Comment1");
+    expect(wrapped.render().text()).toContain("Comment2");
+  });
 });
