@@ -2,6 +2,7 @@ import React from "react";
 import CommentBox from "components/CommentBox";
 import { mount } from "enzyme/build";
 import reactDom from "react-dom";
+import * as actions from "actions";
 
 let wrapped;
 beforeEach(() => {
