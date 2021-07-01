@@ -13,7 +13,6 @@ class App extends Component {
         <button
           onClick={() => {
             this.props.changeAuth(false);
-            console.log(this.props.auth);
           }}
         >
           Sign Out
@@ -24,7 +23,6 @@ class App extends Component {
         <button
           onClick={() => {
             this.props.changeAuth(true);
-            console.log(this.props);
           }}
         >
           Sign In
