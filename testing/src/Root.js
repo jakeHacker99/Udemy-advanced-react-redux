@@ -1,13 +1,16 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
 import async from "middleware/async";
-
-const { Provider } = require("react-redux");
-const { default: reducers } = require("reducers");
-
-const { createStore, applyMiddleware } = require("redux");
+import stateValidator from "middleware/stateValidator";
+import reducers from "reducers";
 
 export default ({ children, initialState = {} }) => {
-  const store = createStore(reducers, initialState, applyMiddleware(async));
+  const store = createStore(
+    reducers,
+    initialState,
+    applyMiddleware(async, stateValidator)
+  );
 
   return <Provider store={store}>{children}</Provider>;
 };
