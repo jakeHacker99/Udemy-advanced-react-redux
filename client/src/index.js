@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 
 import App from "./components/App";
+import Signout from "./components/auth/Signout";
 import SignUp from "./components/auth/SignUp";
 import Feature from "./components/Feature";
 import reducers from "./components/reducers";
@@ -20,6 +21,7 @@ reactDom.render(
         <Route path="/" exact component={Welcome}></Route>
         <Route path="/signup" exact component={SignUp}></Route>
         <Route path="/feature" exact component={Feature}></Route>
+        <Route path="/signout" exact component={Signout}></Route>
       </App>
     </BrowserRouter>
   </Provider>,

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { actionTypes } from "redux-form";
 import { AUTH_USER, AUTH_ERROR } from "./types";
 
 export const signup = (formProps, callback) => async (dispatch) => {
@@ -13,4 +14,12 @@ export const signup = (formProps, callback) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: AUTH_ERROR, payload: "Email in use" });
   }
+};
+
+export const signout = () => {
+  localStorage.clearItem("token");
+  return {
+    type: AUTH_USER,
+    payload: "",
+  };
 };
