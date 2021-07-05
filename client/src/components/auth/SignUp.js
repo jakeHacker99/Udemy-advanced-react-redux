@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { compose } from "redux";
 import { reduxForm, Field } from "redux-form";
+
+import * as actions from "../reducers/actions";
 
 class SignUp extends Component {
   onSubmit = (formProps) => {
@@ -30,4 +34,8 @@ class SignUp extends Component {
   }
 }
 
-export default reduxForm({ form: "signup" })(SignUp);
+export default compose(
+  connect(),
+
+  reduxForm({ form: "signup" })
+)(SignUp);
