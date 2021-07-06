@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
-  renderLinks() {}
   render() {
     return (
       <div className="header">
@@ -21,8 +20,6 @@ class Header extends Component {
             </div>
           )}
         </>
-
-        {this.renderLinks()}
       </div>
     );
   }
