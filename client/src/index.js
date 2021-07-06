@@ -5,6 +5,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 
+import Headerstyle from "./components/HeaderStyle.css";
+
 import App from "./components/App";
 import Signin from "./components/auth/Signin";
 import Signout from "./components/auth/Signout";
