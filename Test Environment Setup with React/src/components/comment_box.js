@@ -29,7 +29,7 @@ class CommentBox extends Component {
           onChange={this.handleChange.bind(this)}
         />
         <div>
-          <button action="submit"> shu bror </button>
+          <button action="submit"> submit comment </button>
         </div>
       </form>
     );
