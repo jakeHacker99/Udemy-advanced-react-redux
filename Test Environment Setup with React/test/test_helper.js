@@ -27,6 +27,13 @@ renderComponent = (ComponentClass, props, state) => {
 
 // build helper for simulate
 
+$.find.simulate = (eventName, value) => {
+  if (value) {
+    this.val(value);
+  }
+  TestUtils.Simulate[eventName](this[0]);
+};
+
 // set up chai-jquery
 
 export { renderComponent, expect };
