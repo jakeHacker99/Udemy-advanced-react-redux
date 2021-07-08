@@ -5,6 +5,7 @@ import { Router, Route, browserHistory } from "react-router";
 import { createStore, applyMiddleware } from "redux";
 
 import App from "./components/app";
+import requireAuth from "./components/require_auth";
 import Resources from "./components/Resources";
 import reducers from "./reducers";
 
@@ -14,7 +15,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="/resources" component={Resources}></Route>
+        <Route path="/resources" component={requireAuth(Resources)}></Route>
       </Route>
     </Router>
   </Provider>,
