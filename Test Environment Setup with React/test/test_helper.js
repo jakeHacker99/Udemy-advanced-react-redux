@@ -6,6 +6,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducers from "../src/reducers";
+import chaiJquery from "chaiJquery";
+
 // setup env run as broswer in cmd
 
 global.document = jsdom.jsdom(
@@ -35,5 +37,7 @@ $.find.simulate = (eventName, value) => {
 };
 
 // set up chai-jquery
+
+chaiJquery(chai, chai.util, $);
 
 export { renderComponent, expect };
