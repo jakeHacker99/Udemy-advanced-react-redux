@@ -8,10 +8,12 @@ class UserList extends Component {
   }
   renderUser(user) {
     return (
-      <div className="card card-block">
+      <div className="card card-block" key={user.id}>
         <h4 className="card-tittle"> {user.name} </h4>
-        <p className="card-text">Chesse Factory</p>
-        <a className="btn btn-primary">Email</a>
+        <p className="card-text"> {user.company.name} </p>
+        <a className="btn btn-primary" href={user.website}>
+          Website
+        </a>
       </div>
     );
   }
@@ -19,7 +21,7 @@ class UserList extends Component {
     console.log(this.props);
     return (
       <div>
-        <h2>Users List</h2>
+        <h2 className="center-me">Users List</h2>
         <div className="user-list">{this.props.users.map(this.renderUser)}</div>
       </div>
     );
