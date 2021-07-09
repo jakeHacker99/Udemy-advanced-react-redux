@@ -7,3 +7,9 @@
   width: 30%;
   min-width: 300px;
 }
+.center-me {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
