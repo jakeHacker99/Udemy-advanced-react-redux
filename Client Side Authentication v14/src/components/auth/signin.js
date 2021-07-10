@@ -13,14 +13,15 @@ class Signin extends Component {
       handleSubmit,
       fields: { email, password },
     } = this.props;
+
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <fieldset className="form-group">
-          <label htmlFor="">Email:</label>
+          <label>Email:</label>
           <input {...email} className="form-control" />
         </fieldset>
         <fieldset className="form-group">
-          <input type="text">Password: </input>
+          <label>Password: </label>
           <input {...password} className="form-control" />
         </fieldset>
         <button action="submit" className="btn btn-primary">
