@@ -13,6 +13,7 @@ export const signinUser = ({ email, password }) => {
       .then((res) => {
         dispatch({ type: AUTH_USER });
         browserHistory.push("/feature");
+        localStorage.setItem("token", res.data.token);
       })
       .catch();
 
