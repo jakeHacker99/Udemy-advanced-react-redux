@@ -9,10 +9,11 @@ import reducers from "./reducers";
 import Signin from "./components/auth/signin";
 import { Router, Route, IndexRoute, browserHistory } from "react-router";
 import { createBrowserHistory } from "history";
+import reduxThunk from "redux-thunk";
 
 const newHistory = createBrowserHistory();
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
