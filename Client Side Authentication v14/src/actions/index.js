@@ -12,8 +12,8 @@ export const signinUser = ({ email, password }) => {
       .post(`${API_URL}/signin`, { email, password })
       .then((res) => {
         dispatch({ type: AUTH_USER });
-        browserHistory.push("/feature");
         localStorage.setItem("token", res.data.token);
+        browserHistory.push("/feature");
       })
       .catch(() => {
         dispatch(authError("Invalid logininfo"));
@@ -25,6 +25,19 @@ export const signinUser = ({ email, password }) => {
     // redirect to /feature
     // else
     // show  err
+  };
+};
+export const signupUser = ({ email, password }) => {
+  return (dispatch) => {
+    axios
+      .post(`${API_URL}/signup`, { email, password })
+      .then((res) => {
+        dispatch({ type: AUTH_USER });
+        localStorage.setItem("token", res.data.token);
+        browserHistory.push("/feature");
+      })
+
+      .catch((res) => dispatch(authError(res.data.error)));
   };
 };
 

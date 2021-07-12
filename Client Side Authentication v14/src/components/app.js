@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="center-me">
-        client auth
+        Client Auth
         <Header />
       </div>
     );
