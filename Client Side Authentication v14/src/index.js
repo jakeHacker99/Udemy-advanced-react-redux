@@ -10,6 +10,8 @@ import Signin from "./components/auth/signin";
 import { Router, Route, IndexRoute, browserHistory } from "react-router";
 import { createBrowserHistory } from "history";
 import reduxThunk from "redux-thunk";
+import Signout from "./components/auth/signout";
+import Signup from "./components/auth/signup";
 
 const newHistory = createBrowserHistory();
 
@@ -20,6 +22,8 @@ ReactDOM.render(
     <Router history={newHistory}>
       <Route path="/" component={App}></Route>
       <Route path="/signin" component={Signin} />
+      <Route path="/signout" component={Signout} />
+      <Route path="/signup" component={Signup} />
     </Router>
   </Provider>,
   document.querySelector(".container")

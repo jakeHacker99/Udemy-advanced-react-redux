@@ -2,7 +2,7 @@ import axios from "axios";
 import { browserHistory } from "react-router";
 import * as actions from "../actions";
 
-import { AUTH_USER, AUTH_ERROR } from "../actions/types";
+import { AUTH_USER, AUTH_ERROR, NOT_AUTH_USER } from "../actions/types";
 const API_URL = "https:localhost:3090";
 export const signinUser = ({ email, password }) => {
   (dispatch) => {
@@ -32,5 +32,13 @@ export const authError = (err) => {
   return {
     type: AUTH_ERROR,
     payload: err,
+  };
+};
+
+export const signoutUser = () => {
+  localStorage.removeItem("token");
+
+  return {
+    type: NOT_AUTH_USER,
   };
 };
