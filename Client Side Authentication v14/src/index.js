@@ -15,16 +15,23 @@ import Signup from "./components/auth/signup";
 import feature from "./components/feature";
 import requireAuth from "./components/auth/require_auth";
 import welcome from "./components/welcome";
+import { AUTH_USER } from "./actions/types";
 
 const newHistory = createBrowserHistory();
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const store = createStoreWithMiddleware(reducers);
+const token = localStorage.getItem("token");
+
+if (token) {
+  store.dispatch({ type: AUTH_USER });
+}
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <Router history={newHistory}>
       <Route path="/" component={App}></Route>
-      <Route path="/" exact="true" component={welcome}></Route>
+      <Route path="/" exact={true} component={welcome}></Route>
 
       <Route path="/signin" component={Signin} />
       <Route path="/signout" component={Signout} />
