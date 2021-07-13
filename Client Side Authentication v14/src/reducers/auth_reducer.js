@@ -1,4 +1,4 @@
-import { AUTH_USER, NOT_AUTH_USER } from "../actions/types";
+import { AUTH_USER, NOT_AUTH_USER, FETCH_MESSAGE } from "../actions/types";
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -6,6 +6,8 @@ export default (state = {}, action) => {
       return { ...state, error: "", authenticated: true };
     case NOT_AUTH_USER:
       return { ...state, authenticated: false };
+    case FETCH_MESSAGE:
+      return { ...state, message: action.payload };
   }
   return state;
 };
