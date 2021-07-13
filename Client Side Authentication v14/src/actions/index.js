@@ -55,3 +55,15 @@ export const signoutUser = () => {
     type: NOT_AUTH_USER,
   };
 };
+
+export const fetchMessage = () => {
+  return (dispatch) => {
+    axios
+      .get(API_URL, {
+        headers: { authorization: localStorage.getItem("token") },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+};
