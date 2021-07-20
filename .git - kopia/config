@@ -1,0 +1,19 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "main"]
+	url = https://github.com/jakeHacker99/Udemy-advanced-react-redux.git
+	fetch = +refs/heads/*:refs/remotes/main/*
+[remote "testing-2"]
+	url = https://github.com/jakeHacker99/Udemy-advanced-react-redux.git
+	fetch = +refs/heads/*:refs/remotes/testing-2/*
+[branch "main"]
+	remote = main
+	merge = refs/heads/main
+[remote "origin"]
+	url = https://github.com/jakeHacker99/Udemy-advanced-react-redux
+	fetch = +refs/heads/*:refs/remotes/origin/*
